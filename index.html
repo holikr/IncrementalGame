@@ -2,12 +2,21 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
         <title>My Incremental Game</title>
     </head>
     <body>
-        <p id="goldGround">0 Gold</p>
-        <button onClick="grindGold()">Grind Gold</button>
-        <button onClick="buyGoldPerClick()" id="perClickUpgrade">Upgrade Sword (Currently Level 1) Cost: 10 Gold</button>
+        <p id="goldGround" class="gold-ground">0 Gold</p>
+        <div id="navigateButtons">
+            <button onclick="tab('grindGoldMenu')">Go to Grind Gold</button>
+            <button onclick="tab('shopMenu')">Go to Shop</button>
+        </div>
+        <div id="grindGoldMenu">
+            <button onClick="grindGold()">Grind Gold</button>
+        </div>
+        <div id="shopMenu">
+            <button onclick="buyGoldPerClick()" id="perClickUpgrade">Upgrade Sword (Currently Level 1) Cost: 10 Gold</button>
+        </div>
         <script src="main.js" charset="UTF-8" type="text/javascript"></script>
     </body>
 </html>
