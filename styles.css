@@ -1,9 +1,41 @@
-/* .gold-ground {
+* {
+    box-sizing: border-box;
+    font-family: verdana;
+}
 
-} */
+.shopMenu {
+    width: 150px;
+}
 
-body {
-    text-align: center;
+.header {
+    font-size: 25px
+}
+
+.shopBtn {
+    display: block;
+}
+
+.column1 {
+    float:left;
+    width: 40%;
+    padding: 50px;
+    font-size: 20px;
+}
+
+.column2 {
+    float:left;
+    width: 40%;
+    padding: 50px;
+}
+
+*button {
+    display: block;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 * {

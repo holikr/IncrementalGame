@@ -6,20 +6,20 @@
         <title>My Incremental Game</title>
     </head>
     <body>
-        <p id="goldGround" class="gold-ground">0.0 Gold</p>
-        <p id="goldPerSecond" class="gps">0.0 Gold Per Second</p>
-        <p id="goldPerClick" class="gpc">1 Gold Per Click</p>
-        <div id="navigateButtons">
-            <button onclick="tab('grindGoldMenu')">Go to Grind</button>
-            <button onclick="tab('shopMenu')">Go to Shop</button>
+        <div class="row">
+            <div id="stats", class="column1">
+                <p id="goldGround" class="gold-ground">0.0 Gold</p>
+                <p id="goldPerSecond" class="gps">0.0 Gold Per Second</p>
+                <p id="goldPerClick" class="gpc">1 Gold Per Click</p>
+                <button onClick="grindGold()">Grind Gold</button>
+            </div>
+            <div id="shopMenu", class="column2">
+                <p class="header">Shop Menu</p>
+                <button class="shopBtn", onclick="buySwordUpgrade()" id="swordPerClickUpgrade">Upgrade Sword (Level 1) Cost: 10 Gold</button>
+                <button class="shopBtn", onClick="buyBowUpgrade()" id="bowPerClickUpgrade">Upgrade Bow (Level 1) Cost: 100</button>
+            </div>
         </div>
-        <div id="grindGoldMenu">
-            <button onClick="grindGold()">Grind Gold</button>
-        </div>
-        <div id="shopMenu">
-            <button onclick="buySwordUpgrade()" id="swordPerClickUpgrade">Upgrade Sword (Currently Level 1) Cost: 10 Gold</button>
-            <button onClick="buyBowUpgrade()" id="bowPerClickUpgrade">Upgrade Bow (Currently Level 1) Cost: 100</button>
-        </div>
+
         <script src="main.js" charset="UTF-8" type="text/javascript"></script>
     </body>
 </html>

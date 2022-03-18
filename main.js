@@ -27,12 +27,12 @@ function grindGold() {
 function buySwordUpgrade () {
     if (gameData.gold >= gameData.goldPerClickCostSword){
         gameData.gold -= gameData.goldPerClickCostSword
-        gameData.goldPerClick += 0.2
+        gameData.goldPerClick += 0.5
         gameData.goldPerClickCostSword *= 2
         gameData.swordLevel += 1
-        gameData.goldPerSecond += 0.1
+        gameData.goldPerSecond += 0.5
         update("goldGround", format(gameData.gold, "scientific") + " Gold")
-        update("swordPerClickUpgrade", "Upgrade Sword (Currently Level " + gameData.swordLevel + ") Cost: " + format(gameData.goldPerClickCostSword, "scientific") + " Gold")
+        update("swordPerClickUpgrade", "Upgrade Sword (Level " + gameData.swordLevel + ") Cost: " + format(gameData.goldPerClickCostSword, "scientific") + " Gold")
         update("goldPerSecond", format(gameData.goldPerSecond, "scientific") + " Gold Per Second")
         update("goldPerClick", format(gameData.goldPerClick, "scientific") + " Gold Per Click")
     }
@@ -41,12 +41,12 @@ function buySwordUpgrade () {
 function buyBowUpgrade () {
     if (gameData.gold >= gameData.goldPerClickCostBow){
         gameData.gold -= gameData.goldPerClickCostBow
-        gameData.goldPerClick += 0.5
+        gameData.goldPerClick += 1.0
         gameData.goldPerClickCostBow *= 2
         gameData.bowLevel += 1
-        gameData.goldPerSecond += 0.5
+        gameData.goldPerSecond += 1.0
         update("goldGround", format(gameData.gold, "scientific") + " Gold")
-        update("bowPerClickUpgrade", "Upgrade Bow (Currently Level " + gameData.bowLevel + ") Cost: " + format(gameData.goldPerClickCostBow, "scientific") + " Gold")
+        update("bowPerClickUpgrade", "Upgrade Bow (Level " + gameData.bowLevel + ") Cost: " + format(gameData.goldPerClickCostBow, "scientific") + " Gold")
         update("goldPerSecond", format(gameData.goldPerSecond, "scientific") + " Gold Per Second")
         update("goldPerClick", format(gameData.goldPerClick, "scientific") + " Gold Per Click")
     }
