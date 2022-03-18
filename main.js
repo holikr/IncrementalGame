@@ -5,9 +5,13 @@ if (savegame !== null) {
 }
 
 var gameData = {
-    gold: 0,
+    gold: 0.0,
     goldPerClick: 1,
-    goldPerClickCost: 10,
+    goldPerSecond: 0.0,
+    swordLevel: 1,
+    bowLevel: 1,
+    goldPerClickCostSword: 10,
+    goldPerClickCostBow: 100,
     lastTick: Date.now()
 }
 
@@ -20,13 +24,31 @@ function grindGold() {
     update("goldGround", format(gameData.gold, "scientific") + " Gold")
 }
 
-function buyGoldPerClick () {
-    if (gameData.gold >= gameData.goldPerClickCost){
-        gameData.gold -= gameData.goldPerClickCost
-        gameData.goldPerClick += 1
-        gameData.goldPerClickCost *= 2
+function buySwordUpgrade () {
+    if (gameData.gold >= gameData.goldPerClickCostSword){
+        gameData.gold -= gameData.goldPerClickCostSword
+        gameData.goldPerClick += 0.2
+        gameData.goldPerClickCostSword *= 2
+        gameData.swordLevel += 1
+        gameData.goldPerSecond += 0.1
         update("goldGround", format(gameData.gold, "scientific") + " Gold")
-        update("perClickUpgrade", "Upgrade Sword (Currently Level " + gameData.goldPerClick + ") Cost: " + format(gameData.goldPerClickCost, "scientific") + " Gold")
+        update("swordPerClickUpgrade", "Upgrade Sword (Currently Level " + gameData.swordLevel + ") Cost: " + format(gameData.goldPerClickCostSword, "scientific") + " Gold")
+        update("goldPerSecond", format(gameData.goldPerSecond, "scientific") + " Gold Per Second")
+        update("goldPerClick", format(gameData.goldPerClick, "scientific") + " Gold Per Click")
+    }
+}
+
+function buyBowUpgrade () {
+    if (gameData.gold >= gameData.goldPerClickCostBow){
+        gameData.gold -= gameData.goldPerClickCostBow
+        gameData.goldPerClick += 0.5
+        gameData.goldPerClickCostBow *= 2
+        gameData.bowLevel += 1
+        gameData.goldPerSecond += 0.5
+        update("goldGround", format(gameData.gold, "scientific") + " Gold")
+        update("bowPerClickUpgrade", "Upgrade Bow (Currently Level " + gameData.bowLevel + ") Cost: " + format(gameData.goldPerClickCostBow, "scientific") + " Gold")
+        update("goldPerSecond", format(gameData.goldPerSecond, "scientific") + " Gold Per Second")
+        update("goldPerClick", format(gameData.goldPerClick, "scientific") + " Gold Per Click")
     }
 }
 
@@ -34,7 +56,7 @@ function buyGoldPerClick () {
 var mainGameLoop = window.setInterval(function() {
     diff = Date.now() - gameData.lastTick;
     gameData.lastTick = Date.now()
-    gameData.gold += gameData.goldPerClick * (diff / 1000)
+    gameData.gold += gameData.goldPerSecond
     update("goldGround", format(gameData.gold, "scientific") + " Gold")
   }, 1000)
 
