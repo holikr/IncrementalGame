@@ -63,7 +63,7 @@ function buySwordLevel() {
 function buySwordUpgrade() {
     if (gameData.gold >= 1000.0 & gameData.swordLevel >= 10) {
         gameData.swordTier = "Copper Sword"
-        gameData.gold -= 100.0
+        gameData.gold -= 1000.0
         gameData.swordMulti += 1
         if (gameData.goldPerClickSword != 0) {
             gameData.goldPerClickSword = gameData.goldPerClickSword * gameData.swordMulti
@@ -92,13 +92,16 @@ function buyAxeLevel() {
         update("axePerClickLevel", gameData.axeTier + " (Level " + gameData.axeLevel + ") Cost: " + format(gameData.goldPerClickCostAxe, "scientific") + " Gold")
         update("goldPerSecondTotal", format(gameData.goldPerSecondTotal, "scientific") + " Gold Per Second")
         update("goldPerClickTotal", format(gameData.goldPerClickTotal, "scientific") + " Gold Per Click")
+        if (gameData.axeLevel >= 10) {
+            document.getElementById("axeUpgrade").disabled = false
+        }
     }
 }
 
 function buyAxeUpgrade() {
-    if (gameData.gold >= 10000.0 & gameData.axeLevel >= 10) {
+    if (gameData.gold >= 50000.0 & gameData.axeLevel >= 10) {
         gameData.axeTier = "Copper Axe"
-        gameData.gold -= 10000.0
+        gameData.gold -= 50000.0
         gameData.axeMulti += 1
         if (gameData.goldPerClickAxe != 0) {
             gameData.goldPerClickAxe = gameData.goldPerClickAxe * gameData.axeMulti
@@ -127,13 +130,16 @@ function buyBowLevel() {
         update("bowPerClickLevel", gameData.bowTier + " (Level " + gameData.bowLevel + ") Cost: " + format(gameData.goldPerClickCostBow, "scientific") + " Gold")
         update("goldPerSecondTotal", format(gameData.goldPerSecondTotal, "scientific") + " Gold Per Second")
         update("goldPerClickTotal", format(gameData.goldPerClickTotal, "scientific") + " Gold Per Click")
+        if (gameData.bowLevel >= 10) {
+            document.getElementById("bowUpgrade").disabled = false
+        }
     }
 }
 
 function buyBowUpgrade() {
-    if (gameData.gold >= 50000.0 & gameData.bowLevel >= 10) {
+    if (gameData.gold >= 75000.0 & gameData.bowLevel >= 10) {
         gameData.bowTier = "Copper Bow"
-        gameData.gold -= 50000.0
+        gameData.gold -= 75000.0
         gameData.bowMulti += 1
         if (gameData.goldPerClickBow != 0) {
             gameData.goldPerClickBow = gameData.goldPerClickBow * gameData.bowMulti
