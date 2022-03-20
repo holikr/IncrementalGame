@@ -1,43 +1,23 @@
-* {
-    box-sizing: border-box;
-    font-family: verdana;
+.btn:focus {
+    outline: none;
+    box-shadow: none;
 }
 
-.shopMenu {
-    width: 150px;
+.btn{
+	box-shadow: none !important
 }
 
-.header {
-    font-size: 25px
-}
-
-.shopBtn {
-    display: block;
-}
-
-.column1 {
-    float:left;
-    width: 40%;
-    padding: 50px;
+/* eka column */
+.col-md-5 {
     font-size: 20px;
 }
 
-.column2 {
-    float:left;
-    width: 40%;
-    padding: 50px;
+/* toka column 
+.cold-md-6 {
+    
+}*/
+
+.header {
+    font-size: 30px;
 }
 
-*button {
-    display: block;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-* {
-    outline: none;
-}
