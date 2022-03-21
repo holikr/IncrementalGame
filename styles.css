@@ -7,17 +7,24 @@
 	box-shadow: none !important
 }
 
-/* eka column */
-.col-md-5 {
-    font-size: 20px;
-}
-
-/* toka column 
-.cold-md-6 {
-    
-}*/
-
 .header {
     font-size: 30px;
 }
 
+.text-sm-left {
+    font-size: 18px;
+    font-family: Verdana;
+}
+
+#goldGround {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+/*#container1 {
+    background-color: rgb(124, 122, 122);
+}
+
+#container2 {
+    background-color:dimgray;
+}
